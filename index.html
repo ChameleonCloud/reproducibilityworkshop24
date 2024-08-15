@@ -13,12 +13,12 @@
             color: #333;
         }
         header {
-            background-image: url('./assets/img/reproducibilitywebsitebackground.jpg'); /* Replace with your actual image URL */
+            background-image: url('./assets/img/reproducibilitywebsitebackground.jpg');
             background-size: cover;
             background-position: bottom;
             color: #fff;
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 2rem 1rem;
             position: relative;
         }
         nav {
@@ -33,21 +33,28 @@
             justify-content: center;
         }
         nav ul li {
-            margin: 0 1rem;
+            margin: 0 0.5rem;
         }
         nav ul li a {
             color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem;
             border-radius: 5px;
             transition: background-color 0.3s;
+            display: inline-block;
         }
         nav ul li a:hover, nav ul li a.active {
             background-color: #2c3e50;
         }
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: #fff;
+        }
         main {
-            padding: 2rem;
-            max-width: 800px;
+            padding: 1rem;
+            max-width: 60%;
             margin: 0 auto;
         }
         .section {
@@ -67,6 +74,7 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            margin: 1rem 0;
         }
         .header-image {
             width: 100%;
@@ -75,26 +83,26 @@
         }
         .speakers {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             margin-top: 2rem;
         }
         .speaker {
             text-align: center;
             margin: 10px;
-            padding-left: 10px;
-            padding-right: 5px;
-            padding-top: 10px;
+            padding: 10px;
             border: 1px solid #2c3e50;
+            max-width: 300px;
         }
         .bio-text {
             text-align: left;
-            font-size: 11px;
+            font-size: 14px;
         }
-        .venue-image {
-            width: 100%;
-            max-height: 400px;
+        .venue-image, .map-image {
+            width: 40%;
             object-fit: cover;
-            margin-top: 2rem;
+            margin-top: 1rem;
+            border-radius: 8px;
         }
         footer {
             background-color: #2c3e50;
@@ -114,10 +122,10 @@
         }
         .content-image {
             max-width: 100%;
-            height: auto;
-            margin: 1rem 0;
+            object-fit: cover;
+            max-height: 300px;
+            margin: 1rem 1rem 1rem 1rem;
             border-radius: 8px;
-            scale: 0.9;
         }
         .speaker-image {
             width: 150px;
@@ -127,50 +135,96 @@
         }
         .venue-images {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-evenly;
             margin-top: 1rem;
-        }
-        .venue-image, .map-image {
-            width: 48%;
-            border-radius: 8px;
-        }
-        .sponsor-section .sponsor-logos {
-            justify-content: flex-start;
         }
         .registration-image {
             width: 200px;
             height: 200px;
             margin: 1rem auto;
             border-radius: 50%;
-            /* display: block; */
+            display: block;
         }
-        .registration-header{
+        .registration-header {
             display: flex;
-            flex-direction:row-reverse
+            flex-direction: column-reverse;
+            align-items: center;
         }
         .callout {
-            background-color: #f0f0f0;
+            background-color: #f8f9fa;
             border-left: 5px solid #4a90e2;
-            padding: 15px;
-            margin: 20px 0;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s ease;
+        }
+        .callout:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
         .callout h3 {
             color: #4a90e2;
             margin-top: 0;
+            font-size: 1.4em;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
         }
         .callout h4 {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .callout p {
+            margin-bottom: 10px;
+            line-height: 1.6;
         }
         .gantt-chart {
             width: 100%;
-            max-width: 800px;
+            max-width: 100%;
             margin: 20px auto;
             overflow-x: auto;
         }
         .gantt-chart svg {
             display: block;
-            width: 100%;
+            width: 800px;
             height: auto;
+        }
+        @media (max-width: 768px) {
+            .speakers {
+                flex-direction: column;
+                align-items: center;
+            }
+            .speaker {
+                max-width: 100%;
+            }
+            .venue-images {
+                flex-direction: column;
+            }
+            .venue-image, .map-image {
+                width: 100%;
+            }
+            .registration-header {
+                flex-direction: column-reverse;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            .menu-icon {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -185,6 +239,7 @@
         </svg>
     </header>
     <nav>
+        <div class="menu-icon">&#9776; Menu</div>
         <ul>
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -198,6 +253,12 @@
         <section id="home" class="section active">
             <img src="./assets/img/Chameleon-youtube(1).png" alt="Chameleon Server Stacks at ANL" class="content-image">
             <h2>Welcome to the Community Workshop on Practical Reproducibility in HPC</h2>
+            <div class="callout">
+                <h1>Event Info</h1>
+                <p><strong>Date:</strong> Monday, November 18, 2024</p>
+                <p><strong>Location:</strong> Terminus 330, Atlanta, GA</p>
+                <p><strong>Time:</strong> 8:30 AM - 6:30 PM ET</p>
+            </div>
             <p>Join us for a full-day workshop exploring practical
             reproducibility in High-Performance Computing (HPC) featuring
             keynotes from Torsten Hoefler, Professor of Computer Science at ETH
@@ -205,11 +266,6 @@
             National Labratory. This event aims to bridge the gap between
             theoretical reproducibility and its real-world application in HPC
             research.</p>
-            <div class="callout">
-                <p><strong>Date:</strong> Monday, November 18, 2024</p>
-                <p><strong>Location:</strong> Terminus 330, Atlanta, GA</p>
-                <p><strong>Time:</strong> 8:30 AM - 6:30 PM ET</p>
-            </div>
             <a href="#registration" class="cta-button">Register Now</a>
         </section>
         
@@ -415,6 +471,13 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navMenu = document.querySelector('nav ul');
+
+            menuIcon.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
+
             const navLinks = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('.section');
 
@@ -432,6 +495,11 @@
                         navLink.classList.remove('active');
                     });
                     link.classList.add('active');
+
+                    // Hide menu on mobile after clicking a link
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('show');
+                    }
                 });
             });
 
