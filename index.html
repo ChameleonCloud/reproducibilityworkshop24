@@ -13,8 +13,8 @@
             color: #333;
         }
         header {
-            background-image: url('./assets/img/reproducibilitywebsitebackground.jpg');
-            background-size: cover;
+            background-image: url('./assets/img/background.jpg');
+            background-size: contain;
             background-position: bottom;
             color: #fff;
             text-align: center;
@@ -53,9 +53,12 @@
             color: #fff;
         }
         main {
-            padding: 1rem;
+            background-color: #f9f9f9;
+            padding: 2rem;
             max-width: 60%;
             margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
         .section {
             display: none;
@@ -83,20 +86,41 @@
         }
         .speakers {
             display: flex;
+            flex-direction: column;
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 2rem;
         }
         .speaker {
-            text-align: center;
             margin: 10px;
             padding: 10px;
             border: 1px solid #2c3e50;
-            max-width: 300px;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 100%;
         }
-        .bio-text {
-            text-align: left;
-            font-size: 14px;
+        .speaker-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .speaker h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .speaker h4 {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .abstract {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #444;
         }
         .venue-image, .map-image {
             width: 40%;
@@ -123,15 +147,8 @@
         .content-image {
             max-width: 100%;
             object-fit: cover;
-            max-height: 300px;
             margin: 1rem 1rem 1rem 1rem;
             border-radius: 8px;
-        }
-        .speaker-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
         }
         .venue-images {
             display: flex;
@@ -154,7 +171,10 @@
         .callout {
             background-color: #f8f9fa;
             border-left: 5px solid #4a90e2;
-            padding: 20px;
+            width: 50%;
+            padding-left: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
             margin: 25px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 0 8px 8px 0;
@@ -186,11 +206,42 @@
             max-width: 100%;
             margin: 20px auto;
             overflow-x: auto;
+            display:none
         }
         .gantt-chart svg {
             display: block;
             width: 800px;
             height: auto;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 200px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-caption {
+            margin-top: 8px;
+            text-align: center;
+            font-size: 14px;
         }
         @media (max-width: 768px) {
             .speakers {
@@ -234,182 +285,161 @@
           <rect width="800" height="200" fill="#2c3e50"/>
           <text x="400" y="60" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">Community Workshop on</text>
           <text x="400" y="100" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">Practical Reproducibility in HPC</text>
-          <text x="400" y="140" font-family="Arial, sans-serif" font-size="20" fill="#3498db" text-anchor="middle">A REPETO Project Initiative</text>
-          <text x="400" y="170" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle">November 18, 2024 - Terminus 330, Atlanta, GA</text>
+          <text x="400" y="130" font-family="Arial, sans-serif" font-size="16" fill="#3498db" text-anchor="middle">The 4th Chameleon User Meeting</text>
+          <text x="400" y="170" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">November 18, 2024 - Terminus 330, Atlanta, GA</text>
         </svg>
     </header>
     <nav>
         <div class="menu-icon">&#9776; Menu</div>
         <ul>
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#agenda">Agenda</a></li>
+            <li><a href="#keynotes">Keynotes</a></li>
             <li><a href="#venue">Venue</a></li>
-            <li><a href="#sponsors">Sponsors</a></li>
             <li><a href="#registration">Registration</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#projects">Projects</a></li>
         </ul>
     </nav>
     <main>
-        <section id="home" class="section active">
-            <img src="./assets/img/Chameleon-youtube(1).png" alt="Chameleon Server Stacks at ANL" class="content-image">
-            <h2>Welcome to the Community Workshop on Practical Reproducibility in HPC</h2>
+        <section id="about" class="section active">
+            <h2>Welcome to the Community Workshop on Practical Reproducibility
+            in HPC</h2>
             <div class="callout">
-                <h1>Event Info</h1>
-                <p><strong>Date:</strong> Monday, November 18, 2024</p>
-                <p><strong>Location:</strong> Terminus 330, Atlanta, GA</p>
-                <p><strong>Time:</strong> 8:30 AM - 6:30 PM ET</p>
+                <h2>Event Info</h2>
+                <p><strong>Date:</strong> Monday, November 18, 2024<br>
+                <strong>Location:</strong> Terminus 330, Atlanta, GA<br>
+                <strong>Time:</strong> 8:30 AM - 6:30 PM ET</p>
+                <a href="#registration" class="cta-button">Register Now</a>
             </div>
-            <p>Join us for a full-day workshop exploring practical
-            reproducibility in High-Performance Computing (HPC) featuring
-            keynotes from Torsten Hoefler, Professor of Computer Science at ETH
-            Zurich, and Kate Keahey, Senior Computer Scientist at Argonne
-            National Labratory. This event aims to bridge the gap between
-            theoretical reproducibility and its real-world application in HPC
-            research.</p>
-            <a href="#registration" class="cta-button">Register Now</a>
-        </section>
-        
-        <section id="about" class="section">
-            <h2>About the Workshop</h2>
-            <p>There is widespread agreement that adopting practices enabling or facilitating reproducibility of computational results can lead to more robust science and increased scientific productivity. In particular, enabling practical reproducibility, i.e., a practice whereby reproducing results rather than just reading about them becomes a mainstream method of scientific exploration, has the potential to provide a boost to scientific exchange. At the same time, the tools, services, and approaches that best support reproducibility are still a topic of open community debate.</p>
-            <p>This workshop aims to provide a forum for this debate and bridge the gap between theoretical reproducibility and its practical application in HPC research. We will bring together researchers, practitioners, and stakeholders to discuss challenges, platforms, tools, and community-driven strategies in reproducible HPC experiments. Sponsored by the NSF-funded Chameleon platform and REPETO project, we aim to foster community practices that make reproducibility a part of mainstream research and education activities in computer science.</p>
-            <h3>Key Themes</h3>
+            <p>Reproducibility in High-Performance Computing (HPC) and systems
+            research presents <em>unique challenges</em>. The requirements for
+            <strong>specialized hardware, scale, and deep
+            reconfigurability</strong> often make experiments extremely
+            difficult to reproduce. The diverse nature of HPC research further
+            complicates matters, with some experiments being relatively
+            straightforward and low-cost to replicate, while others remain
+            practically unfeasible. Despite these challenges, the
+            <strong>potential benefits of reproducibility in HPC are
+            immense</strong>. Examining experiments from various angles can
+            yield significant insights, fostering collaboration by allowing
+            researchers to <em>explore each other's results not just through
+            reading, but through hands-on experimentation</em>.</p>
+            <p>Our workshop, colocated in Atlanta with the <strong>premier <a
+            href="https://sc24.supercomputing.org/">annual conference
+            showcasing the latest innovations in supercomputing
+            technology</a></strong>, aims to advance the concept of
+            <em>practical reproducibility in HPC</em> - a practice where
+            <strong>reproducing results becomes a mainstream method of
+            scientific exploration</strong>. We will provide a forum for debate
+            on the tools, services, and approaches that best support
+            reproducibility in HPC and systems science, concluding with a
+            <strong>comprehensive report that captures the community's
+            collective knowledge and recommendations</strong> for advancing
+            practical reproducibility in HPC and systems research.</p>
+            <p>This workshop is supported by the <a
+            href="https://chameleoncloud.org"><strong>Chameleon
+            project</strong></a>, a cutting-edge cloud platform designed for
+            computer science research. Chameleon has been instrumental as a
+            platform for reproducibility in major conferences, including most
+            <strong>recently serving as the default platform for the <a
+            href="https://sc24.supercomputing.org/program/papers/reproducibility-initiative/#infrastructure-for-artifact-evaluation">SC24
+            Reproducibility Initiative</a></strong> as well as supporting
+            others like ICPE, ACM CSS, EuroSys, FAST, OSDI/ATC, and more.</p>
+            <p>We are excited to announce our feature keynotes from
+            distinguished speakers including <strong>Torsten Hoefler, Professor
+            of Computer Science at ETH Zurich, and Kate Keahey, Senior Computer
+            Scientist at Argonne National Laboratory and PI of
+            Chameleon</strong>. These talks will provide valuable insights into
+            the <em>state-of-the-art in HPC reproducibility and future
+            directions</em>.</p>
+            <h3>Workshop Objectives</h3>
             <ul>
-                <li>Discuss challenges in HPC reproducibility and artifact evaluation</li>
-                <li>Share experiences and best practices from multiple stakeholder vantage points (authors, reviewers, chairs)</li>
-                <li>Explore innovative solutions for reproducible HPC experiments and enabling platforms</li>
-                <li>Foster community practices that integrate reproducibility into mainstream research and education</li>
-                <li>Establish a repository of exemplar reproducibility artifacts in HPC</li>
+                <li>Bring together authors and reviewers participating in
+                reproducibility initiatives associated with HPC and systems
+                conferences, particularly those leveraging the Chameleon
+                platform</li>
+                <li>Share experiences and discuss challenges in implementing
+                reproducibility in HPC environments</li>
+                <li>Propose and evaluate features for platforms, tools, and
+                services that would facilitate easier reproducibility</li>
+                <li>Explore innovative solutions for reproducible HPC
+                experiments and enabling platforms</li>
+                <li>Foster community practices that integrate reproducibility
+                into mainstream research and education</li>
+                <li>Establish a repository of exemplar reproducibility
+                artifacts in HPC</li>
             </ul>
-            <div class="callout">
-                <h3>Keynote Highlight: "Reproducing Performance - The Good, the Bad, and the Ugly"</h3>
-                <p>Torsten Hoefler, Professor of Computer Science at ETH Zurich</p>
-                <p><strong>Abstract</strong></p>
-                <p>Containers and Jupyter notebooks are useful tools for reproducing computational results of any packaged application. However, if the execution performance or efficiency is the science result, matters are more complex. It may not be sufficient to package codes in containers. In fact, containers may disturb the performance results and reproducibility. We outline a set of techniques to facilitate performance reproducibility in various settings. Some performance results may be linked to specific computer architectures or even specific system configurations that may not be accessible to other researchers or even the original team after a software update. We outline techniques to help researchers interpret results on the original system even if it is practically impossible to reproduce the original results. We discuss such techniques both in the context of pure performance but also in the context of the emerging field of data science and artificial intelligence that often allows for a performance-accuracy tradeoff. All-in-all, our work provides a set of guidelines to follow to support reproducible science of performance and benchmarking.</p>
-            </div>
-        
             <h3>Who Should Attend</h3>
             <ul>
                 <li>HPC researchers and practitioners</li>
-                <li>Participants in SC's Reproducibility Initiative</li>
-                <li>Educators interested in reproducibility in HPC education</li>
+                <li>Participants in SC's Reproducibility Initiative and similar
+                programs</li>
+                <li>Educators interested in reproducibility in HPC
+                education</li>
                 <li>Students and early-career researchers in HPC</li>
-                <li>Anyone interested in advancing reproducibility in computational science</li>
+                <li>Tool and platform developers focused on
+                reproducibility</li>
+                <li>Anyone interested in advancing reproducibility in
+                computational science</li>
             </ul>
-        
-            <h3>Workshop Schedule (Tentative)</h3>
-            <div class="gantt-chart">
-                <svg width="800" height="460" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#63b3ed;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <rect width="800" height="460" fill="#f8fafc" />
-                    
-                    <!-- Vertical grid lines -->
-                    <g stroke="#e2e8f0" stroke-width="1">
-                        <line x1="100" y1="40" x2="100" y2="440" />
-                        <line x1="130" y1="40" x2="130" y2="440" />
-                        <line x1="160" y1="40" x2="160" y2="440" />
-                        <line x1="190" y1="40" x2="190" y2="440" />
-                        <line x1="220" y1="40" x2="220" y2="440" />
-                        <line x1="250" y1="40" x2="250" y2="440" />
-                        <line x1="280" y1="40" x2="280" y2="440" />
-                        <line x1="310" y1="40" x2="310" y2="440" />
-                        <line x1="340" y1="40" x2="340" y2="440" />
-                        <line x1="370" y1="40" x2="370" y2="440" />
-                        <line x1="400" y1="40" x2="400" y2="440" />
-                        <line x1="430" y1="40" x2="430" y2="440" />
-                        <line x1="460" y1="40" x2="460" y2="440" />
-                        <line x1="490" y1="40" x2="490" y2="440" />
-                        <line x1="520" y1="40" x2="520" y2="440" />
-                        <line x1="550" y1="40" x2="550" y2="440" />
-                        <line x1="580" y1="40" x2="580" y2="440" />
-                        <line x1="610" y1="40" x2="610" y2="440" />
-                        <line x1="640" y1="40" x2="640" y2="440" />
-                        <line x1="670" y1="40" x2="670" y2="440" />
-                        <line x1="700" y1="40" x2="700" y2="440" />
-                    </g>
-                
-                    <!-- Time labels -->
-                    <g font-family="Arial, sans-serif" font-size="11" fill="#4a5568">
-                        <text x="100" y="30" text-anchor="middle">8:30 AM</text>
-                        <text x="190" y="30" text-anchor="middle">10:00 AM</text>
-                        <text x="280" y="30" text-anchor="middle">11:30 AM</text>
-                        <text x="370" y="30" text-anchor="middle">1:00 PM</text>
-                        <text x="460" y="30" text-anchor="middle">2:30 PM</text>
-                        <text x="550" y="30" text-anchor="middle">4:00 PM</text>
-                        <text x="640" y="30" text-anchor="middle">5:30 PM</text>
-                        <text x="700" y="30" text-anchor="middle">6:30 PM</text>
-                    </g>
-                
-                    <!-- Event bars -->
-                    <g>
-                        <rect x="100" y="50" width="30" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="134" y="85" width="10" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="144" y="120" width="60" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="204" y="155" width="15" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="219" y="190" width="90" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="309" y="225" width="60" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="369" y="260" width="60" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="429" y="295" width="90" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="519" y="330" width="15" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="534" y="365" width="75" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                        <rect x="609" y="400" width="90" height="25" rx="5" ry="5" fill="url(#barGradient)" />
-                    </g>
-                
-                    <!-- Event labels -->
-                    <g font-family="Arial, sans-serif" font-size="12" fill="#2d3748">
-                        <text x="95" y="67" text-anchor="end">Welcome</text>
-                        <text x="129" y="102" text-anchor="end">Introduction</text>
-                        <text x="139" y="137" text-anchor="end">Keynote (Torsten)</text>
-                        <text x="199" y="172" text-anchor="end">Break</text>
-                        <text x="214" y="207" text-anchor="end">First Panel</text>
-                        <text x="304" y="242" text-anchor="end">Lunch</text>
-                        <text x="364" y="277" text-anchor="end">Keynote (Kate)</text>
-                        <text x="424" y="312" text-anchor="end">Second Panel</text>
-                        <text x="514" y="347" text-anchor="end">Break</text>
-                        <text x="529" y="382" text-anchor="end">Concluding Remarks</text>
-                        <text x="604" y="417" text-anchor="end">Rooftop Happy Hour</text>
-                    </g>
-                
-                    <!-- Time labels for events -->
-                    <g font-family="Arial, sans-serif" font-size="10" fill="#4a5568">
-                        <text x="132" y="67" text-anchor="start">8:30-9:00</text>
-                        <text x="146" y="102" text-anchor="start">9:05-9:15</text>
-                        <text x="206" y="137" text-anchor="start">9:15-10:15</text>
-                        <text x="221" y="172" text-anchor="start">10:15-10:30</text>
-                        <text x="311" y="207" text-anchor="start">10:30-12:00</text>
-                        <text x="371" y="242" text-anchor="start">12:00-1:00</text>
-                        <text x="431" y="277" text-anchor="start">1:00-2:00</text>
-                        <text x="521" y="312" text-anchor="start">2:00-3:30</text>
-                        <text x="536" y="347" text-anchor="start">3:30-3:45</text>
-                        <text x="611" y="382" text-anchor="start">3:45-5:00</text>
-                        <text x="701" y="417" text-anchor="start">5:00-6:30</text>
-                    </g>
-                </svg>
+            <p>Join us for this full-day workshop as we work together to bridge
+            the gap between theoretical reproducibility and its practical
+            application in HPC research.</p>
+            <h3>Prior Chameleon User Meetings</h3>
+            <div class="gallery">
+                <a href="https://www.chameleoncloud.org/chameleon-cloud-users-meeting/user-meeting-2023/" class="gallery-item">
+                    <img src="./assets/img/teaching_with_testbeds.jpg" alt="2023 3rd Chameleon User Meeting">
+                    <div class="gallery-caption">2023 3rd Chameleon User Meeting</div>
+                </a>
+                <a href="https://chameleoncloud.org/chiedge-community-workshop/" class="gallery-item">
+                    <img src="./assets/img/chi_edge.jpg" alt="2021 2nd Chameleon User Meeting">
+                    <div class="gallery-caption">2021 2nd Chameleon User Meeting</div>
+                </a>
+                <a href="https://www.chameleoncloud.org/user-meeting-2019/" class="gallery-item">
+                    <img src="./assets/img/Chameleon-youtube(1).png" alt="2019 1st Chameleon User Meeting">
+                    <div class="gallery-caption">2019 1st Chameleon User Meeting</div>
+                </a>
             </div>
         </section>
-
-        <section id="speakers" class="section">
-            <h2>Keynote Speakers</h2>
-            <p>The workshop will feature keynotes on the state of reproducibility in HPC from our distinguished speakers. Additionally, panel discussions with authors and reviewers who have participated in the SC Reproducibility Initiative will share their experiences in creating, evaluating, and ranking HPC artifacts to support reproducibility.</p>
+        <section id="agenda" class="section">
+            <h2>Coming Soon!</h2>
+            <p>The <strong>Community Workshop on Practical Reproducibility in
+            HPC</strong> will occur on Nov. 18, 2024 in Atlanta, GA - the same
+            week and location as this year's <a
+            href="https://sc24.supercomputing.org/">premier high-performance
+            computing conference</a>.</p>
+            <p>Doors will open at 8:30 AM and the event will start at 9 AM.
+            <strong>All attendees are invited to join us for a rooftop happy
+            hour at the end of the event</strong> (around 5 PM). We will send
+            out announcements and update this page when we have a detailed
+            agenda to share.</p>
+            <img class="content-image" src="https://static.showit.co/1600/KVQJAP3tQE-dvur-G5pIVw/205151/rooftop_3.jpg" alt="Image of the Terminus 330 Rooftop Terrance">
+        </section>
+        <section id="keynotes" class="section">
+            <h2>Keynotes</h2>
+            <p>The workshop will feature keynotes on the state of
+            reproducibility in HPC from our distinguished speakers.
+            Additionally, panel discussions with authors and reviewers who have
+            participated in reproducibility initiatives at HPC
+            and systems conferences, such as SC, will share their experiences
+            in creating, evaluating, and ranking HPC artifacts to support
+            reproducibility.</p>
             <div class="speakers">
                 <div class="speaker">
-                    <img src="./assets/img/16x9_Keahey Katarzyna 33455D20_web 1.jpg" alt="Kate Keahey" class="speaker-image">
-                    <p><strong>Kate Keahey</strong></p>
-                    <p class="bio-text">Kate Keahey is a Senior Computer Scientist at Argonne National Laboratory whose work has been pivotal in making cloud computing accessible and practical for scientific research. Her focus on developing platforms like Chameleon has directly addressed challenges in reproducibility by providing researchers with consistent and shareable computing environments. Her pioneering work on Nimbus and Science Clouds has created the infrastructure for scientists to easily replicate experiments and share data, fostering transparency and collaboration. Her advocacy for open science aligns with the core principles of reproducibility, promoting the availability of data and software for scrutiny and reuse. Kate's expertise in cloud infrastructure and her dedication to open science make her insights invaluable for this workshop. Her work directly contributes to creating practical solutions for reproducible research in HPC, particularly by leveraging cloud technologies for accessible and replicable computational environments.</p>
+                    <img src="./assets/img/hoefler_dinfk-2.jpg" alt="Torsten Hoefler" class="speaker-image">
+                    <h3>Torsten Hoefler</h3>
+                    <h4>Keynote: Reproducing Performance - The Good, the Bad, and the Ugly</h4>
+                    <p class="abstract">Containers and Jupyter notebooks are useful tools for reproducing computational results of any packaged application. However, if the execution performance or efficiency is the science result, matters are more complex. It may not be sufficient to package codes in containers. In fact, containers may disturb the performance results and reproducibility. We outline a set of techniques to facilitate performance reproducibility in various settings. Some performance results may be linked to specific computer architectures or even specific system configurations that may not be accessible to other researchers or even the original team after a software update. We outline techniques to help researchers interpret results on the original system even if it is practically impossible to reproduce the original results. We discuss such techniques both in the context of pure performance but also in the context of the emerging field of data science and artificial intelligence that often allows for a performance-accuracy tradeoff. All-in-all, our work provides a set of guidelines to follow to support reproducible science of performance and benchmarking.</p>
                 </div>
                 <div class="speaker">
-                    <img src="./assets/img/hoefler_dinfk-2.jpg" alt="Torsten Hoefler" class="speaker-image">
-                    <p><strong>Torsten Hoefler</strong></p>
-                    <p class="bio-text">Torsten Hoefler is a Full Professor of Computer Science at ETH Zurich, whose research is dedicated to advancing high-performance computing. His work on scalable communication systems and performance modeling directly impacts the reproducibility of large-scale computations. His contributions to MPI standards and performance optimization tools have made it easier for researchers to create portable and efficient code, facilitating reproducibility across different HPC systems. His emphasis on open-source software development aligns with the goals of reproducibility, encouraging transparency and collaboration in the HPC community. Torsten's research is directly relevant to addressing the challenges of reproducibility in HPC. His work on performance modeling and communication standards provides practical solutions for ensuring that complex computations can be reliably replicated and validated. His advocacy for open-source tools further supports the transparency and accessibility that are essential for reproducible research.</p>
+                    <img src="./assets/img/16x9_Keahey Katarzyna 33455D20_web 1.jpg" alt="Kate Keahey" class="speaker-image">
+                    <h3>Kate Keahey</h3>
+                    <h4>Keynote: Adaptable Infrastructures for Reproducible Science - The Chameleon 4 Approach</h4>
+                    <p class="abstract">The landscape of computer science research is evolving at an unprecedented pace, with innovations in AI, data science, edge computing, and beyond. These advancements demand a flexible, powerful infrastructure capable of supporting a wide array of experiments while facilitating reproducibility and collaboration. Chameleon 4, the latest iteration of the NSF-funded testbed, rises to meet these challenges. In this keynote, Dr. Keahey will unveil how Chameleon 4 extends its deeply reconfigurable edge-to-cloud architecture to support emerging research needs. She will describe the testbed's enhanced virtualization capabilities, expanded edge computing functionalities, and advanced mechanisms for sharing digital artifacts. Dr. Keahey will illustrate how these features, combined with Chameleon's existing bare-metal reconfigurability and diverse hardware offerings, create an unparalleled platform for reproducible science. The talk will explore Chameleon 4's approach to federation, enabling seamless integration with other research infrastructures, and discuss how the platform's adaptability ensures it can evolve alongside the ever-changing frontiers of computer science research. Through real-world examples and future roadmaps, attendees will gain insight into how Chameleon 4 is poised to accelerate innovation and foster a more open, collaborative scientific community in the realm of HPC and beyond.</p>
                 </div>
             </div>
         </section>
-
         <section id="venue" class="section">
             <h2>See You in Atlanta!</h2>
             <div class="venue-images">
@@ -418,55 +448,142 @@
             </div>
             <div class="callout">
                 <p><strong>Address</strong></p>
-                <p>330 Marietta St NW, Atlanta, GA 30313</p>
+                <p>330 Marietta St NW <br>
+                Atlanta, GA 30313</p>
             </div>
-            <p>The workshop will be held at <strong>Terminus 330</strong>, a state-of-the-art venue in the heart of Atlanta, GA, conveniently located right around the corner from the Georgia World Congress Center where SC24 is being held (November 17-22, 2024).</p>
+            <p>The workshop will be held at <strong><a
+            href="https://terminus330.com/">Terminus 330</a></strong>, a
+            state-of-the-art venue in the heart of Atlanta, GA, conveniently
+            located right around the corner from the Georgia World Congress
+            Center where the biggest annual conference in supercomputing is
+            being held November 17-22, 2024.</p>
+            <h2>Lodging</h2>
+            <p>Our workshop is conveniently located in the heart of downtown
+            Atlanta. There are many <a
+            href="https://discoveratlanta.com/hotels/main/">high-quality hotels
+            and lodgings in the area</a>. If you are also in town for the big
+            HPC conference, we recommend checking out <a
+            href="https://sc24.supercomputing.org/attend/housing/">their
+            resources</a> for more options.</p>
+            <h2>Travel</h2>
+            <h3>Getting to Atlanta</h3>
+            <p>Atlanta is easily accessible by air and ground transportation:</p>
+            <ul>
+                <li><strong>By Air:</strong> Hartsfield-Jackson Atlanta
+                International Airport (ATL) is the primary airport serving
+                Atlanta.</li>
+                <li><strong>By Car:</strong> Atlanta is intersected by several
+                major interstate highways, making it easily accessible by car
+                from many parts of the United States.</li>
+                <li><strong>By Train:</strong> Amtrak's Crescent line serves
+                Atlanta, connecting it to major cities in the Northeast and New
+                Orleans.</li>
+            </ul>
+            <h3>Getting to the Venue</h3>
+            <p>Terminus 330 is located in downtown Atlanta. Here are some
+            options for getting to the venue:</p>
+            <ul>
+                <li><strong>From the Airport:</strong> Take the MARTA train
+                from the airport to downtown Atlanta. The venue is a short walk
+                or ride-share trip from several MARTA stations.</li>
+                <li><strong>By Public Transit:</strong> Atlanta's MARTA system
+                provides bus and rail service throughout the city. Check the <a
+                href="https://www.itsmarta.com/">MARTA website</a> for routes
+                and schedules.</li>
+                <li><strong>By Car:</strong> If driving, there are several
+                parking options near the venue. We recommend checking online
+                parking apps for the best rates.</li>
+                <li><strong>Ride-sharing:</strong> Services like Uber and Lyft
+                are widely available in Atlanta and can be a convenient option
+                for getting around the city.</li>
+            </ul>
+            <p>For more information on getting around Atlanta, visit the <a
+            href="https://discoveratlanta.com/explore/transportation/">official
+            Atlanta tourism website</a>.</p>
         </section>
-
-        <section id="sponsors" class="section">
-            <h2>Our Sponsors</h2>
+        <section id="projects" class="section">
+            <h2>Our Projects</h2>
             <div>
-                <img src="./assets/img/USNSF_Logo_Lockup_hor_RGB_1200ppi.png" alt="NSF Logo" class="sponsor-logo">
                 <img src="./assets/img/repeto_logo_background_transparent 1.png" alt="REPETO Project Logo" class="sponsor-logo">
                 <img src="./assets/img/chameleonlogo.png" alt="Chameleon Platform Logo" class="sponsor-logo">
             </div>
-            <h3>About the REPETO Project</h3>
-            <p>The REPETO (pronounce to rhyme with Geppetto) project is an NSF-funded research coordination network (RCN) that promotes the concept of <em>practical reproducibility</em>. This practice aims to package experiments in a way that allows cost-effective repetition, making them as accessible for exploring research as reading papers is today.</p>
-            <p>Key aspects of the REPETO project include:</p>
-            <ul>
-                <li>Focus on experiments in the computer science community</li>
-                <li>Understanding the cost/benefit equation of reproducibility for these experiments</li>
-                <li>Identifying factors that make reproducibility difficult or infeasible</li>
-                <li>Fostering community practices to integrate reproducibility into mainstream research and education activities in computer science</li>
-            </ul>
-            <h3>About the Chameleon Testbed</h3>
-            <p>Chameleon is an NSF-funded, large-scale, deeply programmable experimental platform for Computer Science systems research. It provides a configurable environment that can support a wide range of experimental needs, from bare metal reconfiguration to support for reproducible software environments. Chameleon allows researchers to explore transformative concepts in cloud computing, distributed computing, networking, and machine learning, enabling them to experiment with novel cloud architectures and pursue new applications of cloud computing. With its unique features and commitment to openness, Chameleon plays a crucial role in advancing computer science research and education.</p>
+            <h3>About the <a href="https://repeto.cs.uchicago.edu">REPETO Project</a></h3>
+            <p>The REPETO (pronounce to rhyme with Geppetto) project is an
+                NSF-funded research coordination network (RCN) that promotes the
+                concept of <em>practical reproducibility</em>. This practice aims
+                to package experiments in a way that allows cost-effective
+                repetition, making them as accessible for exploring research as
+                reading papers is today.</p>
+                <p>Key aspects of the REPETO project include:</p>
+                <ul>
+                    <li>Focus on experiments in the computer science
+                    community</li>
+                    <li>Understanding the cost/benefit equation of
+                    reproducibility for these experiments</li>
+                    <li>Identifying factors that make reproducibility difficult
+                    or infeasible</li>
+                    <li>Fostering community practices to integrate
+                    reproducibility into mainstream research and education
+                    activities in computer science</li>
+                </ul>
+                <h3>About the <a href="https://chameleoncloud.org">Chameleon Testbed</a></h3>
+                <p>Chameleon is an NSF-funded, large-scale, deeply programmable
+                experimental platform for Computer Science systems research. It
+                provides a configurable environment that can support a wide
+                range of experimental needs, from bare metal reconfiguration to
+                support for reproducible software environments. Chameleon
+                allows researchers to explore transformative concepts in cloud
+                computing, distributed computing, networking, and machine
+                learning, enabling them to experiment with novel cloud
+                architectures and pursue new applications of cloud computing.
+                With its unique features and commitment to openness, Chameleon
+                plays a crucial role in advancing computer science research and
+                education.</p>
+            <img src="./assets/img/USNSF_Logo_Lockup_hor_RGB_1200ppi.png" alt="NSF Logo" class="content-image">
         </section>
-
         <section id="registration" class="section">
+            <a
+            href="https://www.eventbrite.com/e/community-workshop-on-practical-reproducibility-in-hpc-tickets-1000658535617"
+            target="_blank" class="cta-button">Register Here</a>
             <div class="registration-header">
                 <img src="./assets/img/Gemini_Generated_Image_uz33qzuz33qzuz33.jpg" alt="Registration Illustration" class="registration-image">
                 <div>
                     <h2>Registration Details</h2>
-                    <p><strong>Early Bird Registration (until Oct. 1, 2024):</strong> $50</p>
-                    <p><strong>Regular Registration (October 2 - November 1, 2024):</strong> $70</p>
-                    <p><em>All registration fees will cover event-related costs. Limited sponsorships are available to cover partial costs for presenters from under-resourced institutions. Please indicate your interest during registration.</em></p>
-                    <p><strong>Note:</strong> Seats are limited. Register early to secure your spot and take advantage of the early bird discount!</p>
+                    <p><strong>Early Bird Registration (until Sept. 30,
+                    2024):</strong> $20</p>
+                    <p><strong>Regular Registration (Oct. 1 - Nov. 1,
+                    2024):</strong> $100</p>
+                    <p><em>All registration fees will cover event-related
+                    costs. Limited sponsorships are available to cover costs
+                    for presenters. Eligible registrations will receive a
+                    code.</em></p>
+                    <p><strong>Note:</strong> Seats are limited. Register early
+                    to secure your spot and take advantage of the early bird
+                    discount!</p>
                 </div>
             </div>
-            <a href="XXX" class="cta-button">Register Here</a>
+        </section>
+        <section id="contact" class="section">
             <h3>Contact Information</h3>
-            <p>For any questions or concerns, please contact the event coordinator:</p>
-            <p>Marc Richardson<br>Email: mtrichardson@uchicago.edu</p>
+            <p>For any questions or feedback, send us an email at <a
+            href="mailto:contact@chameleoncloud.org">contact@chameleoncloud.org</a>
+            or reach out to one of our <strong>event coordinators</strong>:</p>
+            <p>Name: Marc Richardson<br>Email: <a
+            href="mailto:mtrichardson@uchicago.edu">mtrichardson@uchicago.edu</a></p>
+            <p>Name: Roberto Vale<br>Email: <a
+            href="mailto:rvale@uchicago.edu">rvale@uchicago.edu</a></p>
         </section>
     </main>
     <footer>
-        <h2>Our Sponsors</h2>
+        <h2>Sponsoring Projects</h2>
         <div class="sponsor-logos">
-            <img src="./assets/img/USNSF_Logo_Lockup_hor_RGB_reversed_1200ppi.png" alt="NSF Logo" class="sponsor-logo">
             <img src="./assets/img/repeto_logo_background_transparent 1.png" alt="REPETO Project Logo" class="sponsor-logo" style="background-color:#fff">
             <img src="./assets/img/chameleonlogo.png" alt="Chameleon Platform Logo" class="sponsor-logo">
             <!-- Add more sponsor logos as needed -->
+        </div>
+        <div>
+            <p>Funded by</p>
+            <img src="./assets/img/USNSF_Logo_Lockup_hor_RGB_reversed_1200ppi.png" alt="NSF Logo" class="sponsor-logo">
         </div>
     </footer>
     <script>
@@ -504,7 +621,7 @@
             });
 
             // Handle the registration button on the home page
-            const registrationButton = document.querySelector('#home .cta-button');
+            const registrationButton = document.querySelector('#about .cta-button');
             registrationButton.addEventListener('click', (e) => {
                 e.preventDefault();
                 sections.forEach(section => {
