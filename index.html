@@ -313,6 +313,39 @@
                 display: block;
             }
         }
+        .committee-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 2rem;
+        }
+
+        .committee-member {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #2c3e50;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .committee-photo {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .committee-member h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .committee-member p {
+            color: #666;
+        }
     </style>
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/reproduciblehpcbackground_mini.jpg">
 </head>
@@ -339,13 +372,12 @@
         <div class="menu-icon">&#9776; Menu</div>
         <ul>
             <li><a href="#about" class="active">About</a></li>
-            <li><a href="#call-for-presentations">Call for Presentations</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#call-for-presentations">Calls</a></li>
             <li><a href="#agenda">Agenda</a></li>
             <li><a href="#keynotes">Keynotes</a></li>
             <li><a href="#venue">Venue</a></li>
-            <li><a href="#registration">Registration</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#organizers">Who We Are/Contact</a></li>
         </ul>
     </nav>
     <main>
@@ -353,6 +385,8 @@
             <h2>Welcome to the Community Workshop on Practical Reproducibility
             in HPC</h2>
             <div class="callout-update">
+                <h3>Update - Oct. 22, 2024: Call for Presentations Is Now Closed.</h3>
+                <p>Thank you for your submission!</p>
                 <h3>Update - Oct. 18, 2024: Call for Presentations Deadline Extended!</h3>
                 <p>We will be accepting proposals for presentations until Oct. 21st. Submit your proposal now!</p>
                 <h3>Update - Oct. 1, 2024: Early Bird Registration Extended</h3>
@@ -590,8 +624,66 @@
             href="https://discoveratlanta.com/explore/transportation/">official
             Atlanta tourism website</a>.</p>
         </section>
-        <section id="projects" class="section">
-            <h2>Our Projects</h2>
+        <section id="registration" class="section">
+            <a
+            href="https://www.eventbrite.com/e/community-workshop-on-practical-reproducibility-in-hpc-tickets-1000658535617"
+            target="_blank" class="cta-button">Register Here</a>
+            <div class="registration-header">
+                <img src="./assets/img/Gemini_Generated_Image_uz33qzuz33qzuz33.jpg" alt="Registration Illustration" class="registration-image">
+                <div>
+                    <h2>Registration Details</h2>
+                    <p><strong>Early Bird Registration (NOW UNTIL Oct. 25, 2024):</strong> $20</p>
+                    <p><strong>Regular Registration (Oct. 26 - Nov. 18,
+                    2024):</strong> $100</p>
+                    <p><em>All registration fees will cover event-related
+                    costs. Limited sponsorships are available to cover costs
+                    for presenters. Eligible registrations will receive a
+                    code.</em></p>
+                    <p><strong>Note:</strong> Seats are limited. Register early
+                    to secure your spot and take advantage of the early bird
+                    discount!</p>
+                </div>
+            </div>
+        </section>
+        <section id="organizers" class="section">
+            <h3>Contact Us</h3>
+            <p>For any questions or feedback, send us an email at <a
+            href="mailto:contact@chameleoncloud.org">contact@chameleoncloud.org</a>
+            or reach out to one of our <strong>event coordinators</strong>:</p>
+            <p>Name: Marc Richardson<br>Email: <a
+            href="mailto:mtrichardson@uchicago.edu">mtrichardson@uchicago.edu</a></p>
+            <p>Name: Roberto Vale<br>Email: <a
+            href="mailto:rvale@uchicago.edu">rvale@uchicago.edu</a></p>
+            <h3>Planning Committee</h3>
+            <p>Meet the dedicated team assisting the Community Workshop on Practical Reproducibility in HPC.</p>
+            <div class="committee-members">
+                <div class="committee-member">
+                    <img src="https://www-staging.isi.edu/wp-content/uploads/headshots/bkocolos-2.jpg" alt="Brian Kocoloski" class="committee-photo">
+                    <h3><a href="https://www-staging.isi.edu/directory/bkocolos/" target="_blank">Brian Kocoloski</a></h3>
+                    <p>USC Information Sciences Institute</p>
+                </div>
+                <div class="committee-member">
+                    <img src="https://engineering.nyu.edu/sites/default/files/styles/square_large_620_2x/public/2019-08/ffund-800.jpg?h=fbf7a813&itok=SqYh_mxE" alt="Fraida Fund" class="committee-photo">
+                    <h3><a href="https://engineering.nyu.edu/faculty/fraida-fund" target="_blank">Fraida Fund</a></h3>
+                    <p>New York University</p>
+                </div>
+                <div class="committee-member">
+                    <img src="https://informatics.tuwien.ac.at/people/sascha-hunold/picture/head-1x.webp" alt="Sascha Hunold" class="committee-photo">
+                    <h3><a href="https://informatics.tuwien.ac.at/people/sascha-hunold" target="_blank">Sascha Hunold</a></h3>
+                    <p>Vienna University of Technology</p>
+                </div>
+                <div class="committee-member">
+                    <img src="https://odata.cdm.depaul.edu/Cdm.svc/CdmEmployeePictures(1135817)/MediumPicture/$value" alt="Tanu Malik" class="committee-photo">
+                    <h3><a href="https://www.cdm.depaul.edu/Faculty-and-Staff/Pages/faculty-info.aspx?fid=1328" target="_blank">Tanu Malik</a></h3>
+                    <p>DePaul University</p>
+                </div>
+                <div class="committee-member">
+                    <img src="https://media.licdn.com/dms/image/v2/C5603AQHkH0RbhWDzEg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517790337001?e=1735171200&v=beta&t=hdo9xD4QmmFNOIXGiRTCsqpHHESf_sJO3Ntvt1p6OUY" alt="Rafa Tolosana Calasanz" class="committee-photo">
+                    <h3><a href="https://www.linkedin.com/in/rafael-tolosana-calasanz-70949012/?originalSubdomain=es" target="_blank">Rafa Tolosana Calasanz</a></h3>
+                    <p>University of Zaragoza</p>
+                </div>
+            </div>
+            <h3>Our Projects</h3>
             <div>
                 <img src="./assets/img/repeto_logo_background_transparent 1.png" alt="REPETO Project Logo" class="sponsor-logo">
                 <img src="./assets/img/chameleonlogo.png" alt="Chameleon Platform Logo" class="sponsor-logo">
@@ -629,37 +721,6 @@
                 plays a crucial role in advancing computer science research and
                 education.</p>
             <img src="./assets/img/USNSF_Logo_Lockup_hor_RGB_1200ppi.png" alt="NSF Logo" class="content-image">
-        </section>
-        <section id="registration" class="section">
-            <a
-            href="https://www.eventbrite.com/e/community-workshop-on-practical-reproducibility-in-hpc-tickets-1000658535617"
-            target="_blank" class="cta-button">Register Here</a>
-            <div class="registration-header">
-                <img src="./assets/img/Gemini_Generated_Image_uz33qzuz33qzuz33.jpg" alt="Registration Illustration" class="registration-image">
-                <div>
-                    <h2>Registration Details</h2>
-                    <p><strong>Early Bird Registration (NOW UNTIL Oct. 25, 2024):</strong> $20</p>
-                    <p><strong>Regular Registration (Oct. 26 - Nov. 18,
-                    2024):</strong> $100</p>
-                    <p><em>All registration fees will cover event-related
-                    costs. Limited sponsorships are available to cover costs
-                    for presenters. Eligible registrations will receive a
-                    code.</em></p>
-                    <p><strong>Note:</strong> Seats are limited. Register early
-                    to secure your spot and take advantage of the early bird
-                    discount!</p>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="section">
-            <h3>Contact Information</h3>
-            <p>For any questions or feedback, send us an email at <a
-            href="mailto:contact@chameleoncloud.org">contact@chameleoncloud.org</a>
-            or reach out to one of our <strong>event coordinators</strong>:</p>
-            <p>Name: Marc Richardson<br>Email: <a
-            href="mailto:mtrichardson@uchicago.edu">mtrichardson@uchicago.edu</a></p>
-            <p>Name: Roberto Vale<br>Email: <a
-            href="mailto:rvale@uchicago.edu">rvale@uchicago.edu</a></p>
         </section>
     </main>
     <footer>
