@@ -5,6 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Workshop on Practical Reproducibility in HPC - November 18, 2024</title>
     <style>
+        .agenda-toc {
+            background: #f8f9fa;
+            padding: 1.5em;
+            border-radius: 8px;
+            margin-bottom: 2em;
+            border-left: 5px solid #2c3e50;
+        }
+
+        .agenda-toc h3 {
+            color: #2c3e50;
+            margin-bottom: 1em;
+        }
+
+        .agenda-toc-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5em 1.5em;
+            align-items: baseline;
+        }
+
+        .agenda-toc-time {
+            color: #3498db;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .agenda-toc-item {
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            .agenda-toc-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75em;
+            }
+            
+            .agenda-toc-time {
+                color: #3498db;
+                font-size: 0.9em;
+            }
+        }
+        .content-image-container {
+            margin: 2em 0;
+            text-align: center;
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5em;
+        }
+        .agenda-section {
+            margin: 2em 0;
+            padding: 1.5em;
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .agenda-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .agenda-item {
+            display: flex;
+            margin-bottom: 1.5em;
+            gap: 1.5em;
+            align-items: flex-start;
+        }
+
+        .agenda-time {
+            min-width: 140px;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .agenda-content {
+            flex: 1;
+        }
+
+        .agenda-content h4 {
+            color: #2c3e50;
+            margin: 0 0 0.5em 0;
+        }
+
+        .presentation-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+        }
+
+        .presentation-item {
+            padding: 1.5em;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 3px solid #3498db;
+        }
+
+        .presentation-item h4 {
+            color: #2c3e50;
+            margin: 0 0 0.5em 0;
+        }
+
+        .presentation-description {
+            color: #666;
+            margin-top: 0.5em;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .session-note {
+            font-style: italic;
+            color: #666;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .agenda-item {
+                flex-direction: column;
+                gap: 0.5em;
+            }
+            
+            .agenda-time {
+                min-width: auto;
+            }
+            
+            .presentation-item {
+                padding: 1em;
+            }
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -526,18 +664,201 @@
             <p>If you have any questions, please contact us at <a href="mailto:contact@chameleoncloud.org">contact@chameleoncloud.org</a> or via the Chameleon users list.</p>
         </section>
         <section id="agenda" class="section">
-            <h2>Coming Soon!</h2>
-            <p>The <strong>Community Workshop on Practical Reproducibility in
-            HPC</strong> will occur on Nov. 18, 2024 in Atlanta, GA - the same
-            week and location as this year's <a
-            href="https://sc24.supercomputing.org/">premier high-performance
-            computing conference</a>.</p>
-            <p>Doors will open at 8:30 AM and the event will start at 9 AM.
-            <strong>All attendees are invited to join us for a rooftop happy
-            hour at the end of the event</strong> (around 5 PM). We will send
-            out announcements and update this page when we have a detailed
-            agenda to share.</p>
-            <img class="content-image" src="https://static.showit.co/1600/KVQJAP3tQE-dvur-G5pIVw/205151/rooftop_3.jpg" alt="Image of the Terminus 330 Rooftop Terrance">
+            <h2>Workshop Agenda</h2>
+            <div class="agenda-toc">
+                <h3>Schedule Overview</h3>
+                <em>Times are in local Atlanta time</em>
+                <div class="agenda-toc-grid">
+                    <div class="agenda-toc-time">8:30 AM - 9:00 AM</div>
+                    <div class="agenda-toc-item">Welcome Reception and Breakfast</div>
+                    
+                    <div class="agenda-toc-time">9:00 AM - 10:00 AM</div>
+                    <div class="agenda-toc-item">Introduction and Morning Keynote: Dr. Kate Keahey</div>
+                    
+                    <div class="agenda-toc-time">10:00 AM - 10:30 AM</div>
+                    <div class="agenda-toc-item">Morning Break</div>
+                    
+                    <div class="agenda-toc-time">10:30 AM - 12:00 PM</div>
+                    <div class="agenda-toc-item">Morning Presentations - Session 1</div>
+                    
+                    <div class="agenda-toc-time">12:00 PM - 12:30 PM</div>
+                    <div class="agenda-toc-item">Morning Panel Discussion</div>
+                    
+                    <div class="agenda-toc-time">12:30 PM - 1:30 PM</div>
+                    <div class="agenda-toc-item">Lunch Break</div>
+                    
+                    <div class="agenda-toc-time">1:30 PM - 2:30 PM</div>
+                    <div class="agenda-toc-item">Afternoon Keynote: Dr. Torsten Hoefler</div>
+                    
+                    <div class="agenda-toc-time">2:30 PM - 3:00 PM</div>
+                    <div class="agenda-toc-item">Afternoon Break</div>
+                    
+                    <div class="agenda-toc-time">3:00 PM - 4:30 PM</div>
+                    <div class="agenda-toc-item">Afternoon Presentations - Session 2</div>
+                    
+                    <div class="agenda-toc-time">4:30 PM - 5:00 PM</div>
+                    <div class="agenda-toc-item">Afternoon Panel Discussion</div>
+                    
+                    <div class="agenda-toc-time">5:00 PM - 6:30 PM</div>
+                    <div class="agenda-toc-item">Concluding Remarks & Rooftop Happy Hour</div>
+                </div>
+            </div>
+        
+            <section class="agenda-section">
+                <h3>Introduction/Morning Keynote (9:00 AM - 10:00 AM)</h3>
+                <div class="agenda-item">
+                    <div class="agenda-time">8:30 AM - 9:00 AM</div>
+                    <div class="agenda-content">
+                        <h4>Welcome Reception and Breakfast</h4>
+                    </div>
+                </div>
+                <div class="agenda-item">
+                    <div class="agenda-time">9:00 AM - 9:15 AM</div>
+                    <div class="agenda-content">
+                        <h4>Introduction/Welcoming Remarks</h4>
+                        <p>Kate Keahey</p>
+                    </div>
+                </div>
+                <div class="agenda-item">
+                    <div class="agenda-time">9:15 AM - 10:00 AM</div>
+                    <div class="agenda-content">
+                        <h4>Keynote Address: Adaptable Infrastructures for Reproducible Science - The Chameleon 4 Approach</h4>
+                        <p><strong>Kate Keahey</strong>, Senior Computer Scientist, Argonne National Laboratory</p>
+                        <p class="agenda-description">The landscape of computer science research is evolving at an unprecedented pace, with innovations in AI, data science, edge computing, and beyond. These advancements demand a flexible, powerful infrastructure capable of supporting a wide array of experiments while facilitating reproducibility and collaboration. Dr. Keahey will unveil how Chameleon 4 extends its deeply reconfigurable edge-to-cloud architecture to support emerging research needs, describing enhanced virtualization capabilities, expanded edge computing functionalities, and advanced mechanisms for sharing digital artifacts.</p>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Morning Break (10:00 AM - 10:30 AM)</h3>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Morning Presentations - Session 1 (10:30 AM - 12:00 PM)</h3>
+                <p class="session-note">Each presenter will have approximately 15 minutes for their presentation, followed by 2-3 minutes for questions.</p>
+                
+                <div class="presentation-list">
+                    <div class="presentation-item">
+                        <h4>From Artifact Descriptions to Artifact Evaluation: Experiences from the SC21 Reproducibility Initiative</h4>
+                        <p><strong>Tanu Malik</strong>, DePaul University</p>
+                        <p class="presentation-description">A comprehensive analysis of the 2021 International Supercomputing Conference reproducibility initiative, examining the effectiveness of artifact evaluation processes and badge assessment methods across 300+ papers.</p>
+                    </div>
+        
+                    <div class="presentation-item">
+                        <h4>Packaging a Testbed for Reproducibility Workflows</h4>
+                        <p><strong>Sam Grayson</strong>, University of Illinois Urbana-Champaign</p>
+                        <p class="presentation-description">An exploration of reproducible package management approaches for workflow systems, with insights on shared system considerations and incremental computation strategies.</p>
+                    </div>
+        
+                    <div class="presentation-item">
+                        <h4>Reproducing C++ Multicore and GPU Benchmark Results on Chameleon Cloud</h4>
+                        <p><strong>Ruben Laso</strong>, University of Vienna</p>
+                        <p class="presentation-description">A detailed examination of STL implementation reproducibility across various compilers and architectures, featuring practical demonstrations using Chameleon Cloud.</p>
+                    </div>
+        
+                    <div class="presentation-item">
+                        <h4>Assessing Visualization Reproducibility in HPC</h4>
+                        <p><strong>Triveni Gurram</strong> and <strong>David Koop</strong>, Northern Illinois University</p>
+                        <p class="presentation-description">Novel approaches for evaluating and ensuring reproducibility in scientific visualizations, with emphasis on meaningful difference detection and validation methods.</p>
+                    </div>
+        
+                    <div class="presentation-item">
+                        <h4>Performance and Power Optimization Strategies Concerning HPC Nodes</h4>
+                        <p><strong>Akhilesh Raj</strong>, Vanderbilt University</p>
+                        <p class="presentation-description">Strategies for real-time monitoring and optimization of power usage in HPC systems using machine learning approaches.</p>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Morning Panel Discussion (12:00 PM - 12:30 PM)</h3>
+                <p>Featuring morning session 1 presenters</p>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Lunch Break (12:30 PM - 1:30 PM)</h3>
+                <p>Complimentary lunch served in the main event room.</p>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Afternoon Keynote (1:30 PM - 2:30 PM)</h3>
+                <div class="agenda-item">
+                    <div class="agenda-content">
+                        <h4>Reproducing Performance - The Good, the Bad, and the Ugly</h4>
+                        <p><strong>Torsten Hoefler</strong>, Professor, ETH Zürich</p>
+                        <p class="agenda-description">While containers and Jupyter notebooks are useful tools for reproducing computational results, performance reproducibility presents unique challenges. Dr. Hoefler will outline techniques to facilitate performance reproducibility across various settings, addressing challenges with system-specific results and configurations. The talk will provide guidelines for reproducible science in performance benchmarking, including considerations for performance-accuracy tradeoffs in data science and artificial intelligence contexts.</p>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Afternoon Break (2:30 PM - 3:00 PM)</h3>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Afternoon Presentations - Session 2 (3:00 PM - 4:30 PM)</h3>
+                <p class="session-note">Each presenter will have approximately 15 minutes for their presentation, followed by 2-3 minutes for questions.</p>
+        
+                <div class="presentation-list">
+                    <div class="presentation-item">
+                        <h4>AutoAppendix: Towards One-Click Reproducibility of Computational Artifacts Using Chameleon Cloud</h4>
+                        <p><strong>Klaus Kraßnitzer</strong>, IST Austria</p>
+                        <p class="presentation-description">A survey of reproducibility in SC24 submissions, presenting guidelines and best practices for artifact evaluation using Chameleon Cloud.</p>
+                    </div>
+        
+                    <div class="presentation-item">
+                        <h4>Understanding Scalability Bugs in Large-Scale Software Systems</h4>
+                        <p><strong>Bogdan Stoica</strong>, University of Chicago</p>
+                        <p class="presentation-description">Analysis of reproducibility challenges in scalability bugs, examining root causes and proposing improved testing methodologies.</p>
+                    </div>
+        
+                    <div class="presentation-item">
+                        <h4>Hierarchical Federated Learning Based Smart Home System Using Chameleon Testbed</h4>
+                        <p><strong>Kevin Kostage</strong>, Florida Gulf Coast University</p>
+                        <p class="presentation-description">Implementation of privacy-preserving learning systems using Chameleon testbed's infrastructure.</p>
+                    </div>
+        
+                    <div class="presentation-item">
+                        <h4>Energy Consumption as a Metric for HPC Workload Reproducibility</h4>
+                        <p><strong>Adithya Raman</strong>, University at Buffalo</p>
+                        <p class="presentation-description">Development of hardware-agnostic energy profiling approaches for HPC workloads.</p>
+                    </div>
+        
+                    <div class="presentation-item">
+                        <h4>Artifact Evaluations as Authors and Reviewers: Lessons, Questions, and Frustrations</h4>
+                        <p><strong>Quentin Guilloteau</strong>, University of Basel</p>
+                        <p class="presentation-description">Insights and recommendations from extensive experience with artifact evaluation processes across major conferences.</p>
+                    </div>
+                </div>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Afternoon Panel Discussion (4:30 PM - 5:00 PM)</h3>
+                <p>Featuring afternoon session 2 presenters</p>
+            </section>
+        
+            <section class="agenda-section">
+                <h3>Concluding Remarks & Happy Hour 🍺 (5:00 PM - 6:30 PM)</h3>
+                <div class="agenda-item">
+                    <div class="agenda-time">5:00 PM - 5:15 PM</div>
+                    <div class="agenda-content">
+                        <h4>Concluding Summary & Remarks</h4>
+                    </div>
+                </div>
+                <div class="agenda-item">
+                    <div class="agenda-time">5:15 PM - 6:30 PM</div>
+                    <div class="agenda-content">
+                        <h4>Rooftop Happy Hour</h4>
+                    </div>
+                </div>
+            </section>
+        
+            <div class="content-image-container">
+                <img src="https://static.showit.co/1600/KVQJAP3tQE-dvur-G5pIVw/205151/rooftop_3.jpg" 
+                     alt="Terminus 330 Rooftop Terrace" 
+                     class="content-image">
+                <p class="image-caption">Join us for a rooftop happy hour at the beautiful Terminus 330</p>
+            </div>
         </section>
         <section id="keynotes" class="section">
             <h2>Keynotes</h2>
