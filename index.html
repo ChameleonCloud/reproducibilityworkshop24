@@ -217,6 +217,16 @@
             font-weight: bold;
             margin: 1rem 0;
         }
+        .download-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
         .header-image {
             width: 100%;
             max-height: 200px;
@@ -310,7 +320,7 @@
         .callout {
             background-color: #f8f9fa;
             border-left: 5px solid #4a90e2;
-            width: 50%;
+            width: 100%;
             padding-left: 20px;
             padding-top: 5px;
             padding-bottom: 5px;
@@ -520,6 +530,31 @@
     </nav>
     <main>
         <section id="about" class="section active">
+                <div class="callout">
+                    <h3>Workshop Report Now Available!</h3>
+                    <p>We're pleased to announce that our <a
+                    href="https://zenodo.org/records/15306610">Report on
+                    Challenges of Practical Reproducibility for Systems and HPC
+                    Computer Science</a>
+                    summarizing the discussions and outcomes from our workshop
+                    is now available.</p>
+                    <p>This report synthesizes findings from the November 2024
+                    Community Workshop on Practical Reproducibility in HPC,
+                    which convened researchers, artifact authors, reviewers,
+                    and chairs of reproducibility initiatives to address the
+                    critical challenge of making computational experiments
+                    reproducible in a cost-effective manner. The workshop
+                    deliberately focused on systems and HPC computer science
+                    research due to its unique requirements, including
+                    specialized hardware access and deep system
+                    reconfigurability. Through structured discussions,
+                    lightning talks, and panel sessions, participants
+                    identified key barriers to practical reproducibility and
+                    formulated actionable recommendations for the community</p>
+                    <p><a class="download-button" href="https://repeto.cs.uchicago.edu/report2024" style="margin-top:
+                    15px;">Download Report</a></p>
+                </div>
+            </div>
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <h2 style="text-align: center; margin: 5px;">What do we need to make reproducibility for HPC experiments practical?</h2>
                 <h3 style="text-align: center; margin: 0px;">Come debate with authors and reviewers of artifact evaluation initiatives at HPC conferences, community practitioners, and infrastructure providers!</h3>
