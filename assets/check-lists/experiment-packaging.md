@@ -1,4 +1,15 @@
+---
+title: "Experiment Packaging Checklist"
+source: "Report on Challenges of Practical Reproducibility for Systems and HPC Computer Science"
+author: "Keahey, Kate; Richardson, Marc; Calasanz, Rafael Tolosana; Hunold, Sascha; Lofstead, Jay; Malik, Tanu; Perez, Christian"
+date: "2025-04-30"
+doi: "10.5281/zenodo.15306610"
+---
+
 # Appendix A: Experiment Packaging Checklist
+
+*From [Report on Challenges of Practical Reproducibility for Systems and HPC Computer Science](https://doi.org/10.5281/zenodo.15306610)*
+*See README.md for how to contribute to this checklist.*
 
 ## WHAT to include for a complete reproducible artifact
 
