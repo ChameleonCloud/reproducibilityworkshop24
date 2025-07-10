@@ -1,5 +1,4 @@
 # Artifact Checklists from the Community Workshop on Practical Reproducibility in HPC
-# ================================================================================
 
 **To cite this version**: Keahey, K., Richardson, M., Tolosana Calasanz, R., Hunold, S., Lofstead, J., Malik, T., & Perez, C. (2025). Report on Challenges of Practical Reproducibility for Systems and HPC Computer Science. Community Workshop on Practical Reproducibility in HPC, Atlanta, Georgia. Zenodo. 10.5281/zenodo.15306610
 
@@ -22,20 +21,20 @@ The checklists are divided into two main categories:
 
 ## Downloading the Checklists
 
-The checklists are available in both Markdown and PDF formats for easy access
-and use.
+The checklists are available in both online as HTML and PDF formats for easy
+access and use.
 
-- [Experiment Packaging Checklist](experiment-packaging.md)
+- [Experiment Packaging Checklist (HTML)](experiment-packaging.md)
 - [Experiment Packaging Checklist (PDF)](experiment-packaging.pdf)
-- [Experiment Style Checklist](experiment-style.md)
+- [Experiment Style Checklist (HTML)](experiment-style.md)
 - [Experiment Style Checklist (PDF)](experiment-style.pdf)
 
 ## Contributing to the Checklists
 
 The checklists for experiment packaging and style will continue to evolve as
 reproducibility practices mature in the HPC community. To encourage feedback,
-we are hosting these checklists here on our repository and invite community
-contributions through GitHub pull requests:
+we are hosting these checklists on our [GitHub repository](https://github.com/ChameleonCloud/reproducibilityworkshop24) and invite community
+contributions through GitHub Pull Requests.
 
 To submit a pull request with suggested modifications:
 
@@ -44,11 +43,14 @@ To submit a pull request with suggested modifications:
    the "Fork" option at the top right corner.)
 2. Create a new branch for your changes (optional).
    ```bash
-   git checkout -b my-feature-branch
+   git checkout -b my-changes
    ```
-3. Make your modifications to the checklist files `experiment-style.md` or
-   `experiment-packaging.md`. (You can edit files directly in GitHub or clone
-   the repository locally and edit them using your preferred text editor.)
+3. Make your modifications to the checklist files
+   [`experiment-style.md`](https://github.com/ChameleonCloud/reproducibilityworkshop24/blob/main/assets/check-lists/experiment-packaging.md)
+   or
+   [`experiment-packaging.md`](https://github.com/ChameleonCloud/reproducibilityworkshop24/blob/main/assets/check-lists/experiment-style.md).
+   (You can edit files directly in GitHub or clone the repository locally and
+   edit them using your preferred text editor.)
 4. Submit a pull request to this repository with a clear description of your
    changes (including the rationale and any relevant context).
 
