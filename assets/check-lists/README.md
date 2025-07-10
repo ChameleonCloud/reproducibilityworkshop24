@@ -1,6 +1,8 @@
 # Artifact Checklists from the Community Workshop on Practical Reproducibility in HPC
 # ================================================================================
 
+**To cite this version**: Keahey, K., Richardson, M., Tolosana Calasanz, R., Hunold, S., Lofstead, J., Malik, T., & Perez, C. (2025). Report on Challenges of Practical Reproducibility for Systems and HPC Computer Science. Community Workshop on Practical Reproducibility in HPC, Atlanta, Georgia. Zenodo. 10.5281/zenodo.15306610
+
 This repository hosts the artifact checklists developed during the [Community
 Workshop on Practical Reproducibility in HPC](https://reproduciblehpc.org),
 held in November 2024. These checklists are designed to guide researchers in
@@ -50,9 +52,9 @@ To submit a pull request with suggested modifications:
 4. Submit a pull request to this repository with a clear description of your
    changes (including the rationale and any relevant context).
 
-**Review Process**: Our committee will review all contributions within 4
-weeks of submission, evaluating them for practical utility and broad
-applicability across HPC domains.
+**Review Process**: Our committee will review all contributions within 4 weeks
+of submission, evaluating them for practical utility and broad applicability
+across HPC domains.
 
 **Updates**: Approved contributions will be merged into the main branch, with
 attribution to contributors.
