@@ -9,7 +9,7 @@ doi: "10.5281/zenodo.15306610"
 # Appendix B: Experiment Style Checklist
 
 *From [Report on Challenges of Practical Reproducibility for Systems and HPC Computer Science](https://doi.org/10.5281/zenodo.15306610)*
-*See README.md for how to contribute to this checklist.*
+*See [README.md](README.md) for how to download or contribute to this checklist.*
 
 ## HOW to organize and present artifacts for easier reviewer use
 
